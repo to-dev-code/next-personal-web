@@ -1,4 +1,3 @@
-import { AppTabProps } from "@/app/components/app-tab/type";
 import { Menu } from "@/app/constants/menu";
 import { AppContainer } from "@/app/models/common";
 import { Dispatch, RefObject, SetStateAction } from "react";

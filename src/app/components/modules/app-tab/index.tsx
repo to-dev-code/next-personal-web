@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
-import { Circle } from "../common/shapes";
+import { Circle } from "../../common/shapes";
 import { AppTabProps } from "./type";
 import cn from "@/app/utils/cn";
 import Link from "next/link";
-import Icon from "../common/icon";
+import Icon from "../../common/icon";
 
 const AppTab = ({ currentPath, history, onCloseTab }: AppTabProps) => {
   return (

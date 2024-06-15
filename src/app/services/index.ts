@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { SendContactRequest, SendContactResponse } from "./type";
-import { ContactMeForm } from "../contact-me/containers/type";
+import { ContactMeForm } from "../containers/contact-me/type";
 
 export const sendContact = (data: ContactMeForm) => {
   return axios.post<

@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
-import { Rectangle } from "../common/shapes";
+import { Rectangle } from "../../common/shapes";
 import { AppMenuProps } from "./type";
-import Icon from "../common/icon";
+import Icon from "../../common/icon";
 import Link from "next/link";
 
 const AppMenu = ({ isOpenMenu, menuList }: AppMenuProps) => {

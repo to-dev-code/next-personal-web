@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Fragment, Suspense } from "react";
-import AppLayoutContainer, {
-  ContentSectionElementContext,
-} from "./containers/app-layout";
 import AppProviders from "./components/providers";
-import AppLoading from "./loading";
-import AppMenu from "./components/app-menu";
-import AppTab from "./components/app-tab";
-import Footer from "./components/common/footer";
-import Navbar from "./components/common/navbar";
-import Sidebar from "./components/common/sidebar";
+import AppLayout from "./components/modules/app-layout";
 import cn from "./utils/cn";
 import "./globals.css";
 
@@ -30,48 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "h-screen flex flex-col")}>
         <AppProviders>
-          <AppLayoutContainer
-            render={({
-              contentSectionElement,
-              contentSectionRef,
-              menuList,
-              isOpenMenu,
-              currentPath,
-              history,
-              onCloseTab,
-              setOpenMenu,
-            }) => (
-              <Fragment>
-                <Navbar />
-                <main className="flex h-[calc(100%-40px)] text-[#a6adbb]">
-                  <Sidebar onClickShape={() => setOpenMenu(!isOpenMenu)} />
-                  <section className="flex w-full">
-                    <AppMenu isOpenMenu={isOpenMenu} menuList={menuList} />
-                    <article className="w-full flex flex-col">
-                      <AppTab
-                        history={history}
-                        currentPath={currentPath}
-                        onCloseTab={onCloseTab}
-                      />
-                      <div
-                        className="bg-primary h-full overflow-y-auto"
-                        ref={contentSectionRef}
-                      >
-                        <ContentSectionElementContext.Provider
-                          value={contentSectionElement}
-                        >
-                          <Suspense fallback={<AppLoading />}>
-                            {children}
-                          </Suspense>
-                        </ContentSectionElementContext.Provider>
-                      </div>
-                    </article>
-                  </section>
-                </main>
-                <Footer />
-              </Fragment>
-            )}
-          />
+          <AppLayout>{children}</AppLayout>
         </AppProviders>
       </body>
     </html>

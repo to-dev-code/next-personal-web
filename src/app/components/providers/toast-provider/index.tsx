@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
 import { ToastContextType, ToastState } from "./type";
 import { createPortal } from "react-dom";
