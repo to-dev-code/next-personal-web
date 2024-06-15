@@ -5,6 +5,7 @@ import PersonalInfoSection from "../../components/modules/about-me/personal-info
 import TechnicalSkillsSection from "../../components/modules/about-me/technical-skills-section";
 import WorkExperienceSection from "../../components/modules/about-me/work-experience-section";
 import AboutMePageContainer from "@/app/containers/about-me/about-me-page";
+import EducationSection from "@/app/components/modules/about-me/education-section";
 
 export default function AboutMePage() {
   return (
@@ -22,6 +23,7 @@ export default function AboutMePage() {
                 technicalSkills={sections.technicalSkills}
               />
               <WorkExperienceSection workExperience={sections.workExperience} />
+              <EducationSection education={sections.education} />
             </div>
           </Fragment>
         );
