@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { AboutMeTabProps } from "./type";
-import AboutMeTabContainer from "@/app/features/about-me/about-me-tab";
 import cn from "@/app/utils/cn";
+import AboutMeTabContainer from "../../containers/about-me-tab";
 
 const AboutMeTab = ({ sections }: AboutMeTabProps) => {
   return (

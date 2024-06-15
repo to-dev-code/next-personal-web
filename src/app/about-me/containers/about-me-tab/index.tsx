@@ -1,6 +1,7 @@
+"use client";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { AboutMeTabContainerProps } from "./type";
-import { ContentSectionElementContext } from "../../app-layout";
+import { ContentSectionElementContext } from "@/app/containers/app-layout";
 
 const AboutMeTabContainer = ({
   render,
