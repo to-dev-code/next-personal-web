@@ -1,1 +1,1 @@
-export type TSidebarProps = { onClickAnyShape: () => void };
+export type SidebarProps = { onClickShape: () => void };

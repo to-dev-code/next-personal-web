@@ -1,13 +1,8 @@
 import { PropsWithChildren } from "react";
-import ThemeProvider from "./theme-provider";
-import MenuProvider from "./menu-provider";
+import ToastProvider from "./toast-provider";
 
 const AppProviders = ({ children }: PropsWithChildren) => {
-  return (
-    <ThemeProvider>
-      <MenuProvider>{children}</MenuProvider>
-    </ThemeProvider>
-  );
+  return <ToastProvider>{children}</ToastProvider>;
 };
 
 export default AppProviders;

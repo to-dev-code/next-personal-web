@@ -1,14 +1,11 @@
-import Icon from "./components/common/icon";
+"use client";
+import { Fragment, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function NotFoundPage({}) {
-  return (
-    <div className="h-full relative">
-      <div className="transform-center">
-        <div className="flex gap-x-2">
-          <Icon name={"info"} />
-          <span>{"Page not found | Please choose a menu"}</span>
-        </div>
-      </div>
-    </div>
-  );
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/blank");
+  }, [router]);
+  return <Fragment />;
 }

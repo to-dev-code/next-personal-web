@@ -6,6 +6,13 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        deskspace: "url('/assets/image/deskspace.jpg')"
+      }
+    }
+  },
   daisyui: {
     themes: [
       {
@@ -18,6 +25,7 @@ const config: Config = {
         },
       },
       "dark",
+      "light",
     ],
   },
   plugins: [require("daisyui")],

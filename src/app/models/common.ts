@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export type TAppContainer<StateType = {}> = {
+export type AppContainer<StateType = {}> = {
   render: (state: StateType) => ReactNode;
 };

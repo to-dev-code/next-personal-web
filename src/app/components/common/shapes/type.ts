@@ -1,3 +1,3 @@
-export type TShapeCommonProps = {
+export type ShapeCommonProps = {
   className?: string;
 };

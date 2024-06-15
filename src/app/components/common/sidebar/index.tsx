@@ -1,29 +1,29 @@
 import { Circle, Rectangle } from "../shapes";
-import { TSidebarProps } from "./type";
+import { SidebarProps } from "./type";
 
-const Sidebar = ({ onClickAnyShape }: TSidebarProps) => {
+const Sidebar = ({ onClickShape }: SidebarProps) => {
   return (
     <aside>
       <div className="w-max h-full bg-primary p-4 flex flex-col justify-between">
         <div className="flex flex-col gap-y-4">
-          <button onClick={onClickAnyShape}>
+          <button onClick={onClickShape}>
             <Circle />
           </button>
-          <button onClick={onClickAnyShape}>
+          <button onClick={onClickShape}>
             <Rectangle />
           </button>
-          <button onClick={onClickAnyShape}>
+          <button onClick={onClickShape}>
             <Circle />
           </button>
-          <button onClick={onClickAnyShape}>
+          <button onClick={onClickShape}>
             <Rectangle />
           </button>
         </div>
         <div className="flex flex-col gap-y-4">
-          <button onClick={onClickAnyShape}>
+          <button onClick={onClickShape}>
             <Circle />
           </button>{" "}
-          <button onClick={onClickAnyShape}>
+          <button onClick={onClickShape}>
             <Circle />
           </button>
         </div>

@@ -1,7 +1,28 @@
 import { MouseEventHandler } from "react";
 
-export type TIconProps = {
-  name: "file" | "close" | "info";
+type IconName =
+  | "info"
+  | "file"
+  | "cross"
+  | "email"
+  | "user"
+  | "facebook"
+  | "linkedin"
+  | "instagram"
+  | "line"
+  | "th-flag"
+  | "phone-call"
+  | "attacht-file"
+  | "circle-checked"
+  | "circle-cross";
+
+export type IconProps = {
+  name: IconName;
   className?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>
+  classNameSvg?: string;
+  width?: string | number;
+  height?: string | number;
+  fillColor?: string;
+  strokeColor?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
