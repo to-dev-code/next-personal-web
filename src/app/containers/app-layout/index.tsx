@@ -1,3 +1,4 @@
+"use client"
 import { createContext, useEffect, useRef, useState } from "react";
 import { AppLayoutContainerProps, ContentSectionElement } from "./type";
 import { usePathname, useRouter } from "next/navigation";

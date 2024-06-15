@@ -1,3 +1,4 @@
+"use client"
 import { useRef } from "react";
 import { getAge } from "@/app/utils/date";
 import { AboutMePageContainerProps } from "./type";

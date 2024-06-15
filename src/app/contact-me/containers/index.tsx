@@ -1,3 +1,4 @@
+"use client"
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ContactMeContainerProps, ContactMeForm } from "./type";
 import { useRef, useState } from "react";

@@ -1,4 +1,3 @@
-"use client";
 import { Fragment } from "react";
 import AboutMeTab from "./components/about-me-tab";
 import PersonalInfoSection from "./components/personal-info-section";
