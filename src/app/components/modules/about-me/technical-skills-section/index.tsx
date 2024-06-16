@@ -199,7 +199,7 @@ const TechnicalSkillsSection = ({
             </LinkNewTab>
             <LinkNewTab href={"https://www.mongodb.com/"}>
               <Image
-                src={"/assets/vector/mongoDB.svg"}
+                src={"/assets/vector/mongodb.svg"}
                 alt={"mongoDB-logo"}
                 width={140}
                 height={140}
