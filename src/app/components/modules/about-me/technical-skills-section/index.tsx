@@ -29,7 +29,7 @@ const TechnicalSkillsSection = ({
       <div className="rounded-box flex bg-[#191e24] min-w-fit gap-y-8 p-10 flex flex-col">
         <div>
           <div className="text-xl mb-4">{"Programming languages"}</div>
-          <div className="flex flex-wrap gap-x-8 items-center">
+          <div className="flex flex-wrap gap-x-6 items-center">
             <Tooltip direction={"bottom"} content="HTML 5">
               <Image
                 src={"/assets/vector/html-5.svg"}
@@ -71,8 +71,8 @@ const TechnicalSkillsSection = ({
           </div>
         </div>
         <div>
-          <div className="text-xl">{"Web frameworks & Libraries"}</div>
-          <div className="flex flex-wrap gap-x-8 items-center">
+          <div className="text-xl mb-4">{"Web frameworks & Libraries"}</div>
+          <div className="flex flex-wrap gap-x-6 items-center">
             <LinkNewTab href={"https://react.dev/"}>
               <Tooltip direction={"bottom"} content={"React"}>
                 <Image
@@ -118,8 +118,8 @@ const TechnicalSkillsSection = ({
                 <Image
                   src={"/assets/vector/redux.svg"}
                   alt={"redux-toolkit-logo"}
-                  width={60}
-                  height={60}
+                  width={55}
+                  height={55}
                 />
               </Tooltip>
             </LinkNewTab>
@@ -128,8 +128,8 @@ const TechnicalSkillsSection = ({
                 <Image
                   src={"/assets/vector/bootstrap.svg"}
                   alt={"bootstrap-logo"}
-                  width={65}
-                  height={65}
+                  width={60}
+                  height={60}
                 />
               </Tooltip>
             </LinkNewTab>
@@ -138,8 +138,8 @@ const TechnicalSkillsSection = ({
                 <Image
                   src={"/assets/vector/daisyui.svg"}
                   alt={"daisyui-logo"}
-                  width={65}
-                  height={65}
+                  width={60}
+                  height={60}
                 />
               </Tooltip>
             </LinkNewTab>
@@ -171,16 +171,16 @@ const TechnicalSkillsSection = ({
                 <Image
                   src={"/assets/vector/highcharts.svg"}
                   alt={"highcharts-logo"}
-                  width={80}
-                  height={80}
+                  width={75}
+                  height={75}
                 />
               </Tooltip>
             </LinkNewTab>
           </div>
         </div>
         <div>
-          <div className="text-xl">{"Environments & Databases"}</div>
-          <div className="flex flex-wrap gap-x-8 items-center h-28">
+          <div className="text-xl mb-4">{"Environments & Databases"}</div>
+          <div className="flex flex-wrap gap-x-6 items-center">
             <LinkNewTab href={"https://nodejs.org/en"}>
               <Image
                 src={"/assets/vector/nodejs.svg"}
@@ -209,14 +209,14 @@ const TechnicalSkillsSection = ({
         </div>
         <div>
           <div className="text-xl mb-4">{"Version control"}</div>
-          <div className="flex flex-wrap gap-x-8 items-center">
+          <div className="flex flex-wrap gap-x-6 items-center">
             <LinkNewTab href={"https://www.git-scm.com/"}>
               <Tooltip direction={"bottom"} content={"Git"}>
                 <Image
                   src={"/assets/vector/git.svg"}
                   alt={"git-logo"}
-                  width={60}
-                  height={60}
+                  width={55}
+                  height={55}
                 />
               </Tooltip>
             </LinkNewTab>
@@ -225,8 +225,8 @@ const TechnicalSkillsSection = ({
                 <Image
                   src={"/assets/vector/gitlab.svg"}
                   alt={"gitlab-logo"}
-                  width={70}
-                  height={70}
+                  width={60}
+                  height={60}
                 />
               </Tooltip>
             </LinkNewTab>
@@ -235,8 +235,8 @@ const TechnicalSkillsSection = ({
                 <Image
                   src={"/assets/vector/github.svg"}
                   alt={"github-logo"}
-                  width={50}
-                  height={50}
+                  width={45}
+                  height={45}
                 />
               </Tooltip>
             </LinkNewTab>
@@ -245,8 +245,8 @@ const TechnicalSkillsSection = ({
                 <Image
                   src={"/assets/vector/bitbucket.svg"}
                   alt={"bitbucket-logo"}
-                  width={65}
-                  height={65}
+                  width={60}
+                  height={60}
                 />
               </Tooltip>
             </LinkNewTab>

@@ -18,6 +18,7 @@ const PersonalInfoSection = ({
                 className="object-cover shadow-xl"
                 width={800}
                 height={0}
+                loading={"lazy"}
               />
             </div>
           </div>

@@ -14,7 +14,7 @@ export default function AboutMePage() {
         return (
           <Fragment>
             <AboutMeTab sections={sections} />
-            <div className="mx-10 my-14 text-sm flex flex-col gap-20">
+            <div className="mx-10 my-14 text-sm flex flex-col gap-y-16">
               <PersonalInfoSection
                 age={age}
                 personalInfo={sections.personalInfo}

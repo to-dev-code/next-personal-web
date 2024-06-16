@@ -1,6 +1,6 @@
 "use client";
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
-import { ToastContextType, ToastState } from "./type";
+import { ToastContextType, ToastState, ToastType } from "./type";
 import { createPortal } from "react-dom";
 import { delay } from "@/app/utils/delay";
 import Icon from "../../common/icon";
@@ -28,6 +28,17 @@ const ToastProvider = ({ children }: PropsWithChildren) => {
     });
   };
 
+  const getToastTypeClass = (type: ToastType) => {
+    switch (type) {
+      case "info":
+        return "alert-info";
+      case "error":
+        return "alert-error";
+      case "success":
+        return "alert-success";
+    }
+  };
+
   useEffect(() => {
     if (toastState.visible) {
       delay(5000).then(() => {
@@ -50,7 +61,7 @@ const ToastProvider = ({ children }: PropsWithChildren) => {
             <div
               className={cn(
                 "alert min-w-96 drop-shadow-xl",
-                "alert-" + toastState.type
+                getToastTypeClass(toastState.type)
               )}
             >
               {

@@ -8,11 +8,20 @@ const Tooltip = ({
   className,
   direction = "top",
 }: PropsWithChildren<TooltipProps>) => {
+  const tooltipClass = (() => {
+    switch (direction) {
+      case "top":
+        return "tooltip-top";
+      case "bottom":
+        return "tooltip-bottom";
+      case "left":
+        return "tooltip-left";
+      case "right":
+        return "tooltip-right";
+    }
+  })();
   return (
-    <div
-      className={cn("tooltip", "tooltip-" + direction, className)}
-      data-tip={content}
-    >
+    <div className={cn("tooltip", tooltipClass, className)} data-tip={content}>
       {children}
     </div>
   );
