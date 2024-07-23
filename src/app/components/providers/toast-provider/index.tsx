@@ -57,7 +57,7 @@ const ToastProvider = ({ children }: PropsWithChildren) => {
     >
       {toastState.visible &&
         createPortal(
-          <div className="toast toast-top toast-center top-4">
+          <div className="toast toast-top toast-center top-4 z-50">
             <div
               className={cn(
                 "alert min-w-96 drop-shadow-xl",

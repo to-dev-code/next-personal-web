@@ -39,7 +39,7 @@ const AppTab = ({ currentPath, history, onCloseTab }: AppTabProps) => {
           </Link>
         ))}
       </div>
-      <div className="dropdown dropdown-end">
+      <div className="dropdown dropdown-end z-20">
         <button
           type="button"
           tabIndex={0}
@@ -54,7 +54,7 @@ const AppTab = ({ currentPath, history, onCloseTab }: AppTabProps) => {
         >
           <li>
             <a>
-              <label className="swap swap-rotate">
+              <label className="swap">
                 <input type="checkbox" />
                 <div className="swap-on flex items-center gap-2">
                   <Icon width={25} height={25} name={"sun"} />
