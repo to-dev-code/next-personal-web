@@ -6,6 +6,7 @@ import TechnicalSkillsSection from "../../components/modules/about-me/technical-
 import WorkExperienceSection from "../../components/modules/about-me/work-experience-section";
 import AboutMePageContainer from "@/app/containers/about-me/about-me-page";
 import EducationSection from "@/app/components/modules/about-me/education-section";
+import AboutMeTabContainer from "@/app/containers/about-me/about-me-tab";
 
 export default function AboutMePage() {
   return (
@@ -13,7 +14,17 @@ export default function AboutMePage() {
       render={({ age, sections }) => {
         return (
           <Fragment>
-            <AboutMeTab sections={sections} />
+            <AboutMeTabContainer
+              sections={sections}
+              render={(aboutMeTabState) => {
+                return (
+                  <AboutMeTab
+                    {...aboutMeTabState}
+                    sections={sections}
+                  />
+                );
+              }}
+            />
             <div className="mx-10 my-14 text-sm flex flex-col gap-y-16">
               <PersonalInfoSection
                 age={age}

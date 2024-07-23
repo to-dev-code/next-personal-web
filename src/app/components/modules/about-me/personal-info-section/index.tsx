@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const PersonalInfoSection = ({
   age,
-  personalInfo,
+  personalInfo: { id, ref },
 }: PersonalInfoSectionProps) => {
   return (
-    <div ref={personalInfo.ref} id={personalInfo.id}>
+    <div id={id} ref={ref}>
       <div className="rounded-box flex bg-[#191e24] items-center min-w-fit gap-10">
         <div className="bg-[url(/assets/image/deskspace.jpg)] bg-cover rounded-s-box">
           <div className="min-w-[400px] h-[320px] relative backdrop-blur-sm bg-white/10 rounded-s-box">

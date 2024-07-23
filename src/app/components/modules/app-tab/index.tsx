@@ -7,7 +7,10 @@ import Icon from "../../common/icon";
 
 const AppTab = ({ currentPath, history, onCloseTab }: AppTabProps) => {
   return (
-    <div role="tablist" className="tabs tabs-lifted tabs-lg bg-neutral">
+    <div
+      role="tablist"
+      className="tabs tabs-lifted tabs-lg bg-neutral flex justify-between items-center"
+    >
       <div className="w-max">
         {history.map((h) => (
           <Link
@@ -35,6 +38,52 @@ const AppTab = ({ currentPath, history, onCloseTab }: AppTabProps) => {
             />
           </Link>
         ))}
+      </div>
+      <div className="dropdown dropdown-end">
+        <button
+          type="button"
+          tabIndex={0}
+          role="button"
+          className="mx-4 text-2xl"
+        >
+          {"•••"}
+        </button>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu bg-base-100 rounded-box z-[1] w-max p-2 shadow"
+        >
+          <li>
+            <a>
+              <label className="swap swap-rotate">
+                <input type="checkbox" />
+                <div className="swap-on flex items-center gap-2">
+                  <Icon width={25} height={25} name={"sun"} />
+                  <span>{"Light"}</span>
+                </div>
+                <div className="swap-off flex items-center gap-2">
+                  <Icon width={25} height={25} name={"moon"} />
+                  <span>{"Dark"}</span>
+                </div>
+              </label>
+            </a>
+          </li>
+          <li>
+            <div className="join gap-0 p-0">
+              <input
+                className="join-item btn"
+                type="radio"
+                name="options"
+                aria-label="TH"
+              />
+              <input
+                className="join-item btn"
+                type="radio"
+                name="options"
+                aria-label="EN"
+              />
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );

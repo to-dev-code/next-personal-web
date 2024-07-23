@@ -3,7 +3,6 @@ import { Fragment } from "react";
 import Link from "next/link";
 import ContactMePageContainer from "../../containers/contact-me";
 import Icon from "../../components/common/icon";
-import Modal from "../../components/common/modal";
 import Tooltip from "../../components/common/tooltip";
 
 export default function ContactMePage() {
@@ -98,10 +97,7 @@ export default function ContactMePage() {
               <div className="w-6/12">
                 <div className="w-[320px] text-white flex flex-col gap-y-8">
                   <Link href={""}>
-                    <Tooltip
-                      content="Click to my LinkedIn"
-                      className="rounded-box bg-[#0077b5] flex gap-x-8 text-lg items-center px-6 min-h-16"
-                    >
+                    <div className="rounded-box bg-[#0077b5] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"linkedin"}
                         fillColor="#ffffff"
@@ -109,13 +105,10 @@ export default function ContactMePage() {
                         height={30}
                       />
                       {"Sophon Inkham"}
-                    </Tooltip>
+                    </div>
                   </Link>
                   <Link href={""}>
-                    <Tooltip
-                      content="Click to my Instragram"
-                      className="rounded-box bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex gap-x-8 text-lg items-center px-6 min-h-16"
-                    >
+                    <div className="rounded-box bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"instagram"}
                         width={30}
@@ -123,13 +116,10 @@ export default function ContactMePage() {
                         fillColor="#ffffff"
                       />
                       {"sophon.to"}
-                    </Tooltip>
+                    </div>
                   </Link>
                   <Link href={""}>
-                    <Tooltip
-                      content="Click to my Facebook"
-                      className="rounded-box bg-[#1877f2] flex gap-x-8 text-lg items-center px-6 min-h-16"
-                    >
+                    <div className="rounded-box bg-[#1877f2] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"facebook"}
                         fillColor="#ffffff"
@@ -137,13 +127,10 @@ export default function ContactMePage() {
                         height={30}
                       />
                       {"Sophon Inkham"}
-                    </Tooltip>
+                    </div>
                   </Link>
                   <Link href={""}>
-                    <Tooltip
-                      content="Click to show QR code"
-                      className="rounded-box bg-[#06c755] flex gap-x-8 text-lg items-center px-6 min-h-16"
-                    >
+                    <div className="rounded-box bg-[#06c755] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"line"}
                         width={30}
@@ -151,10 +138,10 @@ export default function ContactMePage() {
                         fillColor="#ffffff"
                       />
                       {"ID: 0822479023"}
-                    </Tooltip>
+                    </div>
                   </Link>
                   <Link href={"tel:+66889241368"}>
-                    <div className="rounded-box bg-secondary flex gap-x-8 text-lg items-center px-6 min-h-16">
+                    <div className="rounded-box bg-secondary flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"phone-call"}
                         width={30}
@@ -170,34 +157,6 @@ export default function ContactMePage() {
                 </div>
               </div>
             </div>
-            <Modal
-              id={"confirm-send-contact-modal"}
-              title={<div className="text-xl font-bold">{"Confirmation"}</div>}
-              content={
-                <div className="text-md">
-                  {"Do you confirm to send your information?"}
-                </div>
-              }
-              footer={
-                <div className="flex gap-x-2 justify-end">
-                  <button
-                    type={"button"}
-                    className="btn bg-blue-600 text-white border-none px-8 hover:bg-blue-700"
-                    onClick={state.confirmModal.onClickYes}
-                  >
-                    {"Yes"}
-                  </button>
-                  <button
-                    type={"button"}
-                    className="btn btn-ghost text-white hover:bg-blue-700 border border-white"
-                    onClick={state.confirmModal.onClickNo}
-                  >
-                    {"Back to edit"}
-                  </button>
-                </div>
-              }
-              ref={state.confirmModal.ref}
-            />
           </div>
         );
       }}

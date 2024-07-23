@@ -1,6 +1,8 @@
 import { MouseEventHandler } from "react";
 
 type IconName =
+  | "sun"
+  | "moon"
   | "info"
   | "file"
   | "cross"

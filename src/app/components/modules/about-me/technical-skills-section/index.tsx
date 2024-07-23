@@ -1,31 +1,13 @@
-import { PropsWithChildren } from "react";
-import { LinkNewTabProps, TechnicalSkillsSectionProps } from "./type";
-import Link from "next/link";
+import { TechnicalSkillsSectionProps } from "./type";
 import Image from "next/image";
 import Tooltip from "@/app/components/common/tooltip";
-
-const LinkNewTab = ({
-  href,
-  children,
-  className,
-}: PropsWithChildren<LinkNewTabProps>) => {
-  return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className}
-    >
-      {children}
-    </Link>
-  );
-};
+import LinkNewTab from "@/app/components/common/link";
 
 const TechnicalSkillsSection = ({
-  technicalSkills,
+  technicalSkills: { id, ref },
 }: TechnicalSkillsSectionProps) => {
   return (
-    <div ref={technicalSkills.ref} id={technicalSkills.id}>
+    <div id={id} ref={ref}>
       <div className="rounded-box flex bg-[#191e24] min-w-fit gap-y-8 p-10 flex flex-col">
         <div>
           <div className="text-xl mb-4">{"Programming languages"}</div>

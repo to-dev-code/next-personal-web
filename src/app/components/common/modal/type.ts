@@ -6,4 +6,4 @@ export type ModalProps = {
   content?: ReactNode;
   footer?: ReactNode;
   className?: string;
-};
+}

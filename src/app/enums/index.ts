@@ -1,0 +1,3 @@
+export enum SessionKeys {
+  ABOUT_ME_PAGE_SCROLL_POSITION = "ABOUT_ME_PAGE_SCROLL_POSITION",
+}

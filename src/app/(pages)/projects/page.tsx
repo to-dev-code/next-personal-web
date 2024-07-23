@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Rectangle } from "../components/common/shapes";
+import { Rectangle } from "@/app/components/common/shapes";
 import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
 
 export default function ProjectsPage() {
   return (

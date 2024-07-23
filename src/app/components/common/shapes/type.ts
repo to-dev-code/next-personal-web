@@ -1,3 +1,3 @@
-export type ShapeCommonProps = {
+type ShapeCommonProps = {
   className?: string;
 };

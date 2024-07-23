@@ -1,5 +1,5 @@
-import { AboutMeTabProps } from "@/app/components/modules/about-me/about-me-tab/type";
 import { AppContainer } from "@/app/models/common";
+import { AboutMePageContainerState } from "../about-me-page/type";
 
 export type AboutMeTabContainerState = {
   sectionIdCenteredScreen: string;
@@ -7,4 +7,4 @@ export type AboutMeTabContainerState = {
 };
 
 export type AboutMeTabContainerProps = AppContainer<AboutMeTabContainerState> &
-  Pick<AboutMeTabProps, "sections">;
+  Pick<AboutMePageContainerState, "sections">;

@@ -1,5 +1,4 @@
 import { Circle, Rectangle } from "../shapes";
-import { SidebarProps } from "./type";
 
 const Sidebar = ({ onClickShape }: SidebarProps) => {
   return (

@@ -11,11 +11,6 @@ export type ContactMeForm = {
 export type ContactMeContainerProps = AppContainer<{
   formState: FormState<ContactMeForm>;
   isSending: boolean;
-  confirmModal: {
-    ref: MutableRefObject<HTMLDialogElement | null>;
-    onClickYes: () => void;
-    onClickNo: () => void;
-  };
   register: UseFormRegister<ContactMeForm>;
   onAttactFile: () => void;
   onSubmit: () => void;

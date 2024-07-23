@@ -1,5 +1,5 @@
-import { ModalProps } from "./type";
 import { forwardRef } from "react";
+import { ModalProps } from "./type";
 import cn from "@/app/utils/cn";
 
 const Modal = forwardRef<HTMLDialogElement, ModalProps>(function Modal(
@@ -8,7 +8,7 @@ const Modal = forwardRef<HTMLDialogElement, ModalProps>(function Modal(
 ) {
   return (
     <dialog id={id} className={"modal"} ref={ref}>
-      <div className={cn(className, "modal-box flex flex-col")}>
+      <div className={cn(className, "modal-box flex flex-col text-white")}>
         {title && <div className="mb-4">{title}</div>}
         {content && <div className="mb-10">{content}</div>}
         {footer}

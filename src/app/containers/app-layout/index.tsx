@@ -3,6 +3,7 @@ import { createContext, useEffect, useRef, useState } from "react";
 import { AppLayoutContainerProps, ContentSectionElement } from "./type";
 import { usePathname, useRouter } from "next/navigation";
 import menuList, { Menu } from "@/app/constants/menu";
+import { useToast } from "@/app/hooks";
 
 export const ContentSectionElementContext =
   createContext<ContentSectionElement>(null);
@@ -10,6 +11,7 @@ export const ContentSectionElementContext =
 const AppLayoutContainer = ({ render }: AppLayoutContainerProps) => {
   const router = useRouter();
   const pathname = usePathname();
+  const { showToast } = useToast();
   const [isOpenMenu, setOpenMenu] = useState(true);
   const [history, setHistory] = useState<Menu[]>([]);
   const [contentSectionElement, setContentSectionElement] =
@@ -44,15 +46,19 @@ const AppLayoutContainer = ({ render }: AppLayoutContainerProps) => {
   };
 
   useEffect(() => {
-    // Append new menu path to history.
-    const initMenu = menuList.find((menu) => menu.path === pathname);
-    if (initMenu) {
-      appendHistory(initMenu);
+    const lastClickedMenu = menuList.find((menu) => menu.path === pathname);
+    if (lastClickedMenu) {
+      appendHistory(lastClickedMenu);
     }
   }, [pathname]);
 
   useEffect(() => {
     setContentSectionElement(contentSectionRef.current);
+    showToast({
+      type: "info",
+      content: "This website is under development.",
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return render({

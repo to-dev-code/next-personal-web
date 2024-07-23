@@ -1,3 +1,4 @@
+
 export default function Home() {
   return (
     <div className="px-8 pt-8 flex flex-col gap-y-6 h-full">
@@ -8,7 +9,7 @@ export default function Home() {
         <span className="text-accent">{" front-end, back-end "}</span>
         <span className="text-blue-300">{"} "}</span>
         <span className="text-red-400">{"from "}</span>
-        <span className="text-blue-300">{"'software-developer'"}</span>
+        <span className="text-blue-300">{"'software-engineer'"}</span>
         <span>{";"}</span>
       </div>
       <div className="text-md">
@@ -17,7 +18,7 @@ export default function Home() {
         <span className="text-red-400">{"= "}</span>
         <span className="text-green-300">
           {
-            "'I love coding to make a something that best design, best pattern, best performance, all merging to be best software.'"
+            "'I love coding to make a thing that has the best design, best pattern, and best performance, all merging to be the best software.'"
           }
         </span>
         <span>{";"}</span>

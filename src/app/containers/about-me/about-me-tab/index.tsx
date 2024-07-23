@@ -1,20 +1,26 @@
 "use client";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { AboutMeTabContainerProps } from "./type";
 import { ContentSectionElementContext } from "@/app/containers/app-layout";
+import { getSession, setSession } from "@/app/utils/session";
+import { ContentSectionElement } from "../../app-layout/type";
+import { SessionKeys } from "@/app/enums";
+
+const { ABOUT_ME_PAGE_SCROLL_POSITION } = SessionKeys;
 
 const AboutMeTabContainer = ({
   render,
   sections,
 }: AboutMeTabContainerProps) => {
   const contentSectionEl = useContext(ContentSectionElementContext);
+  const scrollTopRef = useRef(0);
   const [sectionIdCenteredScreen, setSectionIdCenteredScreen] = useState(
     sections.personalInfo.id
   );
 
   const onScrollListener = useCallback(
-    ({ target }: Event) => {
-      const contentSection = target as HTMLDivElement | null;
+    (event: Event) => {
+      const contentSection = event.target as ContentSectionElement;
       if (
         contentSection &&
         sections.personalInfo.ref.current &&
@@ -23,8 +29,8 @@ const AboutMeTabContainer = ({
         sections.education.ref.current
       ) {
         /* 
-          Bounding Client Rectangle.
-      */
+          Get bounding client rectangle.
+        */
         const contentSectionBounding = contentSection.getBoundingClientRect();
         const personalInfoBounding =
           sections.personalInfo.ref.current.getBoundingClientRect();
@@ -36,12 +42,12 @@ const AboutMeTabContainer = ({
           sections.education.ref.current.getBoundingClientRect();
         /*
           Center content section position.
-      */
+        */
         const centerPosition =
           contentSectionBounding.bottom - contentSection.offsetHeight / 2;
         /*
           Set the section id is on center section.
-      */
+        */
         switch (true) {
           case personalInfoBounding.top < centerPosition &&
             personalInfoBounding.bottom > centerPosition:
@@ -60,6 +66,10 @@ const AboutMeTabContainer = ({
             setSectionIdCenteredScreen(sections.education.ref.current.id);
             break;
         }
+        /*
+          Save current scroll position.
+        */
+        scrollTopRef.current = contentSection.scrollTop;
       }
     },
     [
@@ -78,9 +88,25 @@ const AboutMeTabContainer = ({
   };
 
   useEffect(() => {
+    /*
+        Get last scroll position from session storage
+    */
+    const lastScrollPosition = getSession(ABOUT_ME_PAGE_SCROLL_POSITION);
+    if (lastScrollPosition) {
+      contentSectionEl?.scrollTo({
+        top: parseInt(lastScrollPosition),
+      });
+    }
     contentSectionEl?.addEventListener("scroll", onScrollListener);
     return () => {
       contentSectionEl?.removeEventListener("scroll", onScrollListener);
+      /*
+        Keep last scroll position to session storage
+      */
+      setSession(
+        ABOUT_ME_PAGE_SCROLL_POSITION,
+        scrollTopRef.current.toString()
+      );
     };
   }, [contentSectionEl, onScrollListener]);
 

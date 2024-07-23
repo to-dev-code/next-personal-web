@@ -1,4 +1,3 @@
-import { ShapeCommonProps } from "./type";
 import cn from "@/app/utils/cn";
 
 export const Circle = ({ className }: ShapeCommonProps) => {

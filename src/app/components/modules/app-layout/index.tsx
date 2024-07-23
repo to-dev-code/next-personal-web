@@ -13,35 +13,31 @@ import AppTab from "../app-tab";
 const AppLayout = ({ children }: PropsWithChildren) => {
   return (
     <AppLayoutContainer
-      render={({
-        contentSectionElement,
-        contentSectionRef,
-        menuList,
-        isOpenMenu,
-        currentPath,
-        history,
-        onCloseTab,
-        setOpenMenu,
-      }) => {
+      render={(state) => {
         return (
           <Fragment>
             <Navbar />
             <main className="flex h-[calc(100%-40px)] text-[#a6adbb]">
-              <Sidebar onClickShape={() => setOpenMenu(!isOpenMenu)} />
+              <Sidebar
+                onClickShape={() => state.setOpenMenu(!state.isOpenMenu)}
+              />
               <section className="flex w-full">
-                <AppMenu isOpenMenu={isOpenMenu} menuList={menuList} />
+                <AppMenu
+                  isOpenMenu={state.isOpenMenu}
+                  menuList={state.menuList}
+                />
                 <article className="w-full flex flex-col">
                   <AppTab
-                    history={history}
-                    currentPath={currentPath}
-                    onCloseTab={onCloseTab}
+                    history={state.history}
+                    currentPath={state.currentPath}
+                    onCloseTab={state.onCloseTab}
                   />
                   <div
                     className="bg-primary h-full overflow-y-auto"
-                    ref={contentSectionRef}
+                    ref={state.contentSectionRef}
                   >
                     <ContentSectionElementContext.Provider
-                      value={contentSectionElement}
+                      value={state.contentSectionElement}
                     >
                       <Suspense fallback={<AppLoading />}>{children}</Suspense>
                     </ContentSectionElementContext.Provider>
