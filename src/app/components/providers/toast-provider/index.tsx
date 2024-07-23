@@ -2,7 +2,7 @@
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
 import { ToastContextType, ToastState, ToastType } from "./type";
 import { createPortal } from "react-dom";
-import { delay } from "@/app/utils/delay";
+import { sleep } from "@/app/utils/sleep";
 import Icon from "../../common/icon";
 import cn from "@/app/utils/cn";
 
@@ -41,7 +41,7 @@ const ToastProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     if (toastState.visible) {
-      delay(5000).then(() => {
+      sleep(5000).then(() => {
         setToastState((current) => {
           return { ...current, visible: false };
         });

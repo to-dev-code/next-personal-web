@@ -2,8 +2,9 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { AppLayoutContainerProps, ContentSectionElement } from "./type";
 import { usePathname, useRouter } from "next/navigation";
-import menuList, { Menu } from "@/app/constants/menu";
 import { useToast } from "@/app/hooks";
+import { sleep } from "@/app/utils/sleep";
+import menuList, { Menu } from "@/app/constants/menu";
 
 export const ContentSectionElementContext =
   createContext<ContentSectionElement>(null);
@@ -54,9 +55,11 @@ const AppLayoutContainer = ({ render }: AppLayoutContainerProps) => {
 
   useEffect(() => {
     setContentSectionElement(contentSectionRef.current);
-    showToast({
-      type: "info",
-      content: "This website is under development.",
+    sleep(2000).then(() => {
+      showToast({
+        type: "info",
+        content: "This website is under development and some content may be not complete.",
+      });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
