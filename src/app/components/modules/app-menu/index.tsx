@@ -18,7 +18,7 @@ const AppMenu = ({ isOpenMenu, menuList }: AppMenuProps) => {
           </div>
           <div className="bg-primary h-8"></div>
           <div className="py-2">
-            <div className="text-xl px-2">{"MY PERSONAL"}</div>
+            <div className="text-xl px-2">{"Information"}</div>
             <ul className="menu rounded-box">
               {menuList.map((menu) => {
                 return (
