@@ -1,9 +1,9 @@
 "use client";
 import { Fragment } from "react";
 import Link from "next/link";
-import ContactMePageContainer from "../../containers/contact-me";
 import Icon from "../../components/common/icon";
 import Tooltip from "../../components/common/tooltip";
+import ContactMePageContainer from "@/app/components/containers/contact-me";
 
 export default function ContactMePage() {
   return (

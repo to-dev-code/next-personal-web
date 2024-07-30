@@ -2,7 +2,7 @@
 import { Fragment, PropsWithChildren, Suspense } from "react";
 import AppLayoutContainer, {
   ContentSectionElementContext,
-} from "@/app/containers/app-layout";
+} from "@/app/components/containers/app-layout";
 import AppLoading from "@/app/loading";
 import Footer from "../../common/footer";
 import Navbar from "../../common/navbar";

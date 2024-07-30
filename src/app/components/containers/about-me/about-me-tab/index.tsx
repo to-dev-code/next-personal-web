@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { AboutMeTabContainerProps } from "./type";
-import { ContentSectionElementContext } from "@/app/containers/app-layout";
+import { ContentSectionElementContext } from "@/app/components/containers/app-layout";
 import { getSession, setSession } from "@/app/utils/session";
 import { ContentSectionElement } from "../../app-layout/type";
 import { SessionKeys } from "@/app/enums";

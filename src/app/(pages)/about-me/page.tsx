@@ -4,9 +4,9 @@ import AboutMeTab from "../../components/modules/about-me/about-me-tab";
 import PersonalInfoSection from "../../components/modules/about-me/personal-info-section";
 import TechnicalSkillsSection from "../../components/modules/about-me/technical-skills-section";
 import WorkExperienceSection from "../../components/modules/about-me/work-experience-section";
-import AboutMePageContainer from "@/app/containers/about-me/about-me-page";
 import EducationSection from "@/app/components/modules/about-me/education-section";
-import AboutMeTabContainer from "@/app/containers/about-me/about-me-tab";
+import AboutMePageContainer from "@/app/components/containers/about-me/about-me-page";
+import AboutMeTabContainer from "@/app/components/containers/about-me/about-me-tab";
 
 export default function AboutMePage() {
   return (
