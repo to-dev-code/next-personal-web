@@ -4,6 +4,7 @@ import Link from "next/link";
 import Icon from "../../components/common/icon";
 import Tooltip from "../../components/common/tooltip";
 import ContactMePageContainer from "@/app/components/containers/contact-me";
+import Button from "@/app/components/common/button";
 
 export default function ContactMePage() {
   return (
@@ -11,7 +12,9 @@ export default function ContactMePage() {
       render={(state) => {
         return (
           <div className="mx-10 my-8">
-            <div className="text-3xl font-bold mb-6">{"Contact me"}</div>
+            <div className="text-3xl text-base-content font-bold mb-6">
+              {"Contact me"}
+            </div>
             <div className="flex w-full justify-between gap-x-8">
               <form
                 className="flex flex-col gap-y-4 w-6/12"
@@ -19,7 +22,10 @@ export default function ContactMePage() {
               >
                 <div className="form-control">
                   <label className="input input-bordered flex items-center gap-2">
-                    <Icon name={"user"} strokeColor="#ffffff" />
+                    <Icon
+                      name={"user"}
+                      className="stroke-none fill-base-content"
+                    />
                     <input
                       type="text"
                       className="grow"
@@ -38,7 +44,10 @@ export default function ContactMePage() {
                 </div>
                 <div className="form-control">
                   <label className="input input-bordered flex items-center gap-2">
-                    <Icon name={"email"} strokeColor="#ffffff" />
+                    <Icon
+                      name={"email"}
+                      className="stroke-none fill-base-content"
+                    />
                     <input
                       type="text"
                       className="grow"
@@ -70,20 +79,19 @@ export default function ContactMePage() {
                     placeholder="Your message"
                     {...state.register("message")}
                   />
-                  <div className="absolute bottom-[10px] left-[15px]">
-                    <Tooltip content={"Attachment"}>
-                      <Icon
-                        name={"attacht-file"}
-                        fillColor="#ffffff"
-                        onClick={state.onAttactFile}
-                      />
-                    </Tooltip>
-                  </div>
+
+                  <Tooltip
+                    className="absolute bottom-[5px] left-[15px]"
+                    content={"Attachment"}
+                  >
+                    <Icon
+                      name={"attacht-file"}
+                      className={"fill-base-content"}
+                      onClick={state.onAttactFile}
+                    />
+                  </Tooltip>
                 </div>
-                <button
-                  type={"submit"}
-                  className="btn bg-blue-600 text-white hover:bg-blue-700 text-accent text-lg border-none"
-                >
+                <Button type={"submit"}>
                   {!state.isSending && "Send"}
                   {state.isSending && (
                     <Fragment>
@@ -91,13 +99,13 @@ export default function ContactMePage() {
                       {"Sending"}
                     </Fragment>
                   )}
-                </button>
+                </Button>
               </form>
               <div className="divider divider-horizontal">{"OR"}</div>
               <div className="w-6/12">
                 <div className="w-[320px] text-white flex flex-col gap-y-8">
-                  <Link href={""}>
-                    <div className="rounded-box bg-[#0077b5] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
+                  <Link href={"javascript:void(0)"}>
+                    <div className="rounded-box shadow-lg bg-[#0077b5] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"linkedin"}
                         fillColor="#ffffff"
@@ -107,8 +115,8 @@ export default function ContactMePage() {
                       {"Sophon Inkham"}
                     </div>
                   </Link>
-                  <Link href={""}>
-                    <div className="rounded-box bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
+                  <Link href={"javascript:void(0)"}>
+                    <div className="rounded-box shadow-lg bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"instagram"}
                         width={30}
@@ -118,8 +126,8 @@ export default function ContactMePage() {
                       {"sophon.to"}
                     </div>
                   </Link>
-                  <Link href={""}>
-                    <div className="rounded-box bg-[#1877f2] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
+                  <Link href={"javascript:void(0)"}>
+                    <div className="rounded-box shadow-lg bg-[#1877f2] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"facebook"}
                         fillColor="#ffffff"
@@ -129,8 +137,8 @@ export default function ContactMePage() {
                       {"Sophon Inkham"}
                     </div>
                   </Link>
-                  <Link href={""}>
-                    <div className="rounded-box bg-[#06c755] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
+                  <Link href={"javascript:void(0)"}>
+                    <div className="rounded-box shadow-lg bg-[#06c755] flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"line"}
                         width={30}
@@ -141,14 +149,14 @@ export default function ContactMePage() {
                     </div>
                   </Link>
                   <Link href={"tel:+66889241368"}>
-                    <div className="rounded-box bg-secondary flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
+                    <div className="rounded-box shadow-lg bg-base-100 flex gap-x-8 text-lg items-center px-6 min-h-16 hover:scale-105 transition-all">
                       <Icon
                         name={"phone-call"}
                         width={30}
                         height={30}
-                        fillColor="#ffffff"
+                        className="fill-base-content"
                       />
-                      <span className="flex items-center gap-x-2">
+                      <span className="flex text-base-content items-center gap-x-2">
                         <Icon name={"th-flag"} width={25} height={20} />
                         {"(+66) 889241368"}
                       </span>

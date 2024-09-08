@@ -6,11 +6,11 @@ import {
   useRef,
   useState,
 } from "react";
-import { ConfirmModalResult, InfoModalResult, ModalContextType } from "./type";
+import { ConfirmModalResult, InfoModalResult, ModalContextValue } from "./type";
 import ConfirmationModal from "../../common/modal/confirmation";
 import InformationModal from "../../common/modal/information";
 
-export const ModalContext = createContext<ModalContextType>({
+export const ModalContext = createContext<ModalContextValue>({
   onConfirmModal: () => Promise.resolve("yes"),
   onInformationModal: () => Promise.resolve("ok"),
 });

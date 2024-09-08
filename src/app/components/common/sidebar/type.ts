@@ -1,1 +1,1 @@
-type SidebarProps = { onClickShape: () => void };
+type SidebarProps = { onClick: () => void };

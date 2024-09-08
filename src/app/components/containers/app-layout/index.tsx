@@ -1,22 +1,20 @@
 "use client";
 import { createContext, useEffect, useRef, useState } from "react";
-import { AppLayoutContainerProps, ContentSectionElement } from "./type";
+import { AppLayoutContainerProps, MainContentContextValue } from "./type";
 import { usePathname, useRouter } from "next/navigation";
-import { useToast } from "@/app/hooks";
-import { sleep } from "@/app/utils/sleep";
+import { useTheme } from "@/app/hooks";
 import menuList, { Menu } from "@/app/constants/menu";
 
-export const ContentSectionElementContext =
-  createContext<ContentSectionElement>(null);
+export const MainContentContext = createContext<MainContentContextValue>(null);
 
 const AppLayoutContainer = ({ render }: AppLayoutContainerProps) => {
   const router = useRouter();
   const pathname = usePathname();
-  const { showToast } = useToast();
+  const { toggleTheme } = useTheme();
   const [isOpenMenu, setOpenMenu] = useState(true);
   const [history, setHistory] = useState<Menu[]>([]);
   const [contentSectionElement, setContentSectionElement] =
-    useState<ContentSectionElement>(null);
+    useState<MainContentContextValue>(null);
   const contentSectionRef = useRef<HTMLDivElement>(null);
 
   const appendHistory = (menu: Menu) => {
@@ -55,23 +53,17 @@ const AppLayoutContainer = ({ render }: AppLayoutContainerProps) => {
 
   useEffect(() => {
     setContentSectionElement(contentSectionRef.current);
-    sleep(2000).then(() => {
-      showToast({
-        type: "info",
-        content: "This website is under development and some content may be not complete.",
-      });
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return render({
-    contentSectionElement,
-    contentSectionRef,
+    history,
     menuList,
     isOpenMenu,
+    contentSectionRef,
+    contentSectionElement,
     currentPath: menuList.find((menu) => menu.path === pathname)?.path ?? "",
-    history: history,
     onCloseTab: removeHistory,
+    toggleTheme,
     setOpenMenu,
   });
 };

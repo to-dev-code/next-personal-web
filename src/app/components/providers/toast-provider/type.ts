@@ -7,6 +7,6 @@ export type ToastState = {
   content: ReactNode;
 };
 
-export type ToastContextType = {
+export type ToastContextValue = {
   showToast: (state: ToastState) => void;
 };

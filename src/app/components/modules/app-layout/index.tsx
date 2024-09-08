@@ -1,7 +1,7 @@
 "use client";
 import { Fragment, PropsWithChildren, Suspense } from "react";
 import AppLayoutContainer, {
-  ContentSectionElementContext,
+  MainContentContext,
 } from "@/app/components/containers/app-layout";
 import AppLoading from "@/app/loading";
 import Footer from "../../common/footer";
@@ -17,9 +17,9 @@ const AppLayout = ({ children }: PropsWithChildren) => {
         return (
           <Fragment>
             <Navbar />
-            <main className="flex h-[calc(100%-40px)] text-[#a6adbb]">
+            <div className="flex h-[calc(100%-40px)] text-base-content">
               <Sidebar
-                onClickShape={() => state.setOpenMenu(!state.isOpenMenu)}
+                onClick={() => state.setOpenMenu(!state.isOpenMenu)}
               />
               <section className="flex w-full">
                 <AppMenu
@@ -31,20 +31,21 @@ const AppLayout = ({ children }: PropsWithChildren) => {
                     history={state.history}
                     currentPath={state.currentPath}
                     onCloseTab={state.onCloseTab}
+                    toggleTheme={state.toggleTheme}
                   />
                   <div
-                    className="bg-primary h-full overflow-y-auto"
+                    className="bg-base-200 h-full overflow-y-auto"
                     ref={state.contentSectionRef}
                   >
-                    <ContentSectionElementContext.Provider
+                    <MainContentContext.Provider
                       value={state.contentSectionElement}
                     >
                       <Suspense fallback={<AppLoading />}>{children}</Suspense>
-                    </ContentSectionElementContext.Provider>
+                    </MainContentContext.Provider>
                   </div>
                 </article>
               </section>
-            </main>
+            </div>
             <Footer />
           </Fragment>
         );

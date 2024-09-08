@@ -10,9 +10,9 @@ export default function ProjectsPage() {
           <Link
             href={""}
             key={uuidv4()}
-            className="flex bg-gradient-to-b from-secondary hover:bg-secondary rounded-lg cursor-pointer transition-all duration-200"
+            className="flex bg-gradient-to-b from-base-100 hover:bg-base-100 rounded-lg cursor-pointer transition-all duration-200"
           >
-            <Rectangle className="bg-accent w-80 h-40 relative top-[-20px] left-4" />
+            <Rectangle className="bg-base-content w-80 h-40 relative top-[-20px] left-4" />
           </Link>
         );
       })}

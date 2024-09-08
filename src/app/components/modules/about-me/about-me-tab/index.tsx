@@ -9,13 +9,13 @@ const AboutMeTab = ({
   onClickTab,
 }: AboutMeTabProps) => {
   return (
-    <div className="sticky flex bg-gradient-to-b from-primary top-[-1px] h-[144px] z-10">
-      <div className="join m-auto">
+    <div className="sticky flex bg-gradient-to-b from-base-200 top-[-1px] h-[144px] z-10">
+      <div className="join m-auto shadow-lg">
         {Object.entries(sections).map(([_, section]) => {
           return (
             <div
               key={uuidv4()}
-              className={"btn join-item h-16 animate-none"}
+              className={"btn join-item h-16 bg-neutral-content border-neutral-content animate-none"}
               onClick={() => onClickTab(section.id)}
             >
               <span

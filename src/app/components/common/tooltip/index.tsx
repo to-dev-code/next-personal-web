@@ -21,7 +21,14 @@ const Tooltip = ({
     }
   })();
   return (
-    <div className={cn("tooltip", tooltipClass, className)} data-tip={content}>
+    <div
+      className={cn(
+        "tooltip before:text-base-content",
+        tooltipClass,
+        className
+      )}
+      data-tip={content}
+    >
       {children}
     </div>
   );

@@ -8,7 +8,7 @@ const Modal = forwardRef<HTMLDialogElement, ModalProps>(function Modal(
 ) {
   return (
     <dialog id={id} className={"modal"} ref={ref}>
-      <div className={cn(className, "modal-box flex flex-col text-white")}>
+      <div className={cn("modal-box flex flex-col text-white", className)}>
         {title && <div className="mb-4">{title}</div>}
         {content && <div className="mb-10">{content}</div>}
         {footer}

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { IconProps } from "./type";
 import cn from "@/app/utils/cn";
+import Button from "../button";
 
 const Icon = ({
   name,
@@ -8,15 +9,15 @@ const Icon = ({
   classNameSvg,
   width = 20,
   height = 20,
-  fillColor = "none",
-  strokeColor = "#000000",
+  fillColor,
+  strokeColor,
   onClick,
 }: IconProps) => {
   const icon = (
     <Fragment>
       {name === "moon" && (
         <svg
-          className={cn(className, "fill-current")}
+          className={cn("fill-current", className)}
           width={width}
           height={height}
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +28,7 @@ const Icon = ({
       )}
       {name === "sun" && (
         <svg
-          className={cn(className, "fill-current")}
+          className={cn("fill-current", className)}
           width={width}
           height={height}
           xmlns="http://www.w3.org/2000/svg"
@@ -323,9 +324,13 @@ const Icon = ({
 
   if (onClick) {
     return (
-      <button type={"button"} onClick={onClick} className={className}>
+      <Button
+        type={"button"}
+        onClick={onClick}
+        className={cn("p-0 bg-transparent hover:bg-transparent", className)}
+      >
         {icon}
-      </button>
+      </Button>
     );
   }
 

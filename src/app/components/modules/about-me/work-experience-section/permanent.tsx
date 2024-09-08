@@ -19,7 +19,7 @@ const Permanent = () => {
             height={25}
           />
           <LinkNewTab
-            className="card flex flex-col gap-y-4 bg-secondary p-4"
+            className="card flex flex-col gap-y-4 bg-base-100 p-4"
             href={"https://www.ttbspark.com/"}
           >
             <div className="bg-white rounded w-fit">
@@ -80,7 +80,7 @@ const Permanent = () => {
             height={25}
           />
           <LinkNewTab
-            className="card flex flex-col gap-y-4 bg-secondary p-4"
+            className="card flex flex-col gap-y-4 bg-base-100 p-4"
             href={"https://www.s3-world.com/"}
           >
             <Image

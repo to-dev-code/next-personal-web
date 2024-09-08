@@ -2,5 +2,5 @@ import { AppLayoutContainerState } from "@/app/components/containers/app-layout/
 
 export type AppTabProps = Pick<
   AppLayoutContainerState,
-  "history" | "currentPath" | "onCloseTab"
+  "history" | "currentPath" | "onCloseTab" | 'toggleTheme'
 >;

@@ -1,15 +1,16 @@
 import { Menu } from "@/app/constants/menu";
 import { AppContainer } from "@/app/models/common";
 import { Dispatch, RefObject, SetStateAction } from "react";
+import { ThemeContextValue } from "../../providers/theme-provider/type";
 
-export type ContentSectionElement = HTMLDivElement | null;
+export type MainContentContextValue = HTMLDivElement | null;
 
-export type AppLayoutContainerState = {
+export type AppLayoutContainerState = Pick<ThemeContextValue, "toggleTheme"> & {
   menuList: Menu[];
   isOpenMenu: boolean;
   history: Menu[];
   currentPath: string;
-  contentSectionElement: ContentSectionElement;
+  contentSectionElement: MainContentContextValue;
   contentSectionRef: RefObject<HTMLDivElement>;
   onCloseTab: (menu: Menu) => void;
   setOpenMenu: Dispatch<SetStateAction<boolean>>;

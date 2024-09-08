@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import { ConfirmationModalProps } from "./type";
 import Modal from "..";
+import Button from "../../button";
 
 const ConfirmationModal = forwardRef<HTMLDialogElement, ConfirmationModalProps>(
   function ConfirmationModal({ content, onYes, onNo }, ref) {
@@ -12,20 +13,18 @@ const ConfirmationModal = forwardRef<HTMLDialogElement, ConfirmationModalProps>(
         content={<div className="text-md">{content}</div>}
         footer={
           <div className="flex gap-x-2 justify-end">
-            <button
+            <Button
               type={"button"}
-              className="btn bg-blue-600 text-white border-none px-8 hover:bg-blue-700"
               onClick={onYes}
             >
               {"Yes"}
-            </button>
-            <button
+            </Button>
+            <Button
               type={"button"}
-              className="btn btn-ghost text-white hover:bg-blue-700 px-8 border border-white"
               onClick={onNo}
             >
               {"No"}
-            </button>
+            </Button>
           </div>
         }
       />

@@ -1,6 +1,6 @@
 "use client";
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
-import { ToastContextType, ToastState, ToastType } from "./type";
+import { ToastContextValue, ToastState, ToastType } from "./type";
 import { createPortal } from "react-dom";
 import { sleep } from "@/app/utils/sleep";
 import Icon from "../../common/icon";
@@ -8,7 +8,7 @@ import cn from "@/app/utils/cn";
 
 type CompleteToastState = ToastState & { visible: boolean };
 
-export const ToastContext = createContext<ToastContextType>({
+export const ToastContext = createContext<ToastContextValue>({
   showToast: () => {},
 });
 
@@ -60,12 +60,13 @@ const ToastProvider = ({ children }: PropsWithChildren) => {
           <div className="toast toast-top toast-center top-4 z-50">
             <div
               className={cn(
-                "alert min-w-96 drop-shadow-xl",
+                "alert min-w-96 drop-shadow-xl text-[#111827]",
                 getToastTypeClass(toastState.type)
               )}
             >
               {
                 <Icon
+                  className="stroke-[#111827]"
                   name={
                     toastState.type === "success"
                       ? "circle-checked"
