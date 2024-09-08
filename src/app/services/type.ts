@@ -1,4 +1,4 @@
-import { ContactMeForm } from "../containers/contact-me/type";
+import { ContactMeForm } from "../components/containers/contact-me/type";
 
 export type SendContactRequest = {
   access_key?: string;
